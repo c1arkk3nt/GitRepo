@@ -31,14 +31,6 @@ class BPomSpider(scrapy.Spider):
 		tot = 3 #int(total)
 		nexthal = 1 #int(hal)
 		
-#		print page
-#		print l
-#		print ppage
-#		print tot
-#		print nexthal
-#		print (tot - nexthal)
-#		print page[:-(len(page)-l+1)]+str(ppage)+page[l:]
-		
 		while (nexthal < tot): 
 			next = page[:-(len(page)-l+1)]+str(ppage)+page[l:]
 			nexthal = nexthal + 1
@@ -50,8 +42,6 @@ class BPomSpider(scrapy.Spider):
 		pass	
 						
 	def parse_detail(self,response):
-		
-#		print response.url
 		
 		divs = response.xpath('//td[@class="odd"]') #response.xpath('//tr/@urldetil') #
 		
